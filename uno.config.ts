@@ -1,0 +1,66 @@
+import {
+  defineConfig,
+  presetAttributify,
+  presetIcons,
+  presetTypography,
+  presetUno,
+  presetWebFonts,
+  transformerDirectives,
+  transformerVariantGroup,
+} from 'unocss'
+
+export default defineConfig({
+  rules: [
+    ['fm-ps2', { 'font-family': "'Press Start 2P'" }],
+    ['fm-fc', { 'font-family': "'Fira Code'" }],
+    ['fm-rw', { 'font-family': "'Raleway'" }],
+    ['fm-sc', { 'font-family': "'SourceHanSansSC'" }],
+    ['bg-main', { 'background': `url('~/assets/image/框架.png') no-repeat`,'background-size':'100% 100%' }],
+    ['bg-index', { 'background': `#001121`}],
+    ['bg-footer', { 'background': `0 1rem url('~/assets/image/下蜂巢格.png') no-repeat`,'background-size':'100% 100%' }],
+    ['bg-btn1', { 'background': `url('~/assets/image/全息感知.png') no-repeat`,'background-size':'100% 100%' }],
+    ['bg-btn1-active', { 'background': `url('~/assets/image/全息感知激活.png') no-repeat`,'background-size':'100% 100%' }],
+    ['bg-btn2', { 'background': `url('~/assets/image/历史事件.png') no-repeat`,'background-size':'100% 100%' }],
+    ['bg-btn2-active', { 'background': `url('~/assets/image/历史事件激活.png') no-repeat`,'background-size':'100% 100%' }],
+    ['bg-btn3', { 'background': `url('~/assets/image/统计分析.png') no-repeat`,'background-size':'100% 100%' }],
+    ['bg-btn3-active', { 'background': `url('~/assets/image/统计分析激活.png') no-repeat`,'background-size':'100% 100%' }],
+    ['bg-btn4', { 'background': `url('~/assets/image/信控优化.png') no-repeat`,'background-size':'100% 100%' }],
+    ['bg-btn4-active', { 'background': `url('~/assets/image/信控优化激活.png') no-repeat`,'background-size':'100% 100%' }],
+    ['bg-btn-query', { 'background': `url('~/assets/image/查询默认.png') no-repeat`,'background-size':'100% 100%' }],
+    ['bg-btn-query-active', { 'background': `url('~/assets/image/查询选中.png') no-repeat`,'background-size':'100% 100%' }],
+    ['bg-btn-reset', { 'background': `url('~/assets/image/重置默认.png') no-repeat`,'background-size':'100% 100%' }],
+    ['bg-btn-reset-active', { 'background': `url('~/assets/image/重置选中.png') no-repeat`,'background-size':'100% 100%' }],
+    ['bg-btn-zoom', { 'background': `url('~/assets/image/缩放按钮.png') no-repeat`,'background-size':'100% 100%' }],
+    ['bg-title', { 'background': `url('~/assets/image/事件视频栏.png') no-repeat`,'background-size':'100% 100%' }],
+    ['bg-title1', { 'background': `rgba(19, 36, 65, 0.8)`}],
+    ['bg-title-long', { 'background': `url('~/assets/image/图表标题长.png') no-repeat`,'background-size':'100% 100%'}],
+    ['bg-title-short', { 'background': `url('~/assets/image/图表标题短.png') no-repeat`,'background-size':'100% 100%'}],
+    ['bg-long', { 'background': `url('~/assets/image/图表长.png') no-repeat`,'background-size':'100% 100%'}],
+    ['bg-short', { 'background': `url('~/assets/image/图表短.png') no-repeat`,'background-size':'100% 100%'}],
+  ],
+  shortcuts: [
+    ['btn', 'px-4 py-1 rounded inline-block bg-teal-700 text-white cursor-pointer !outline-none hover:bg-teal-800 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50'],
+    ['icon-btn', 'inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600'],
+  ],
+  presets: [
+    presetUno(),
+    presetAttributify(),
+    presetIcons({
+      scale: 1.2,
+      warn: true,
+    }),
+    presetTypography(),
+    presetWebFonts({
+      fonts: {
+        sans: 'DM Sans',
+        serif: 'DM Serif Display',
+        mono: 'DM Mono',
+      },
+    }),
+  ],
+  transformers: [
+    transformerDirectives(),
+    transformerVariantGroup(),
+  ],
+  safelist: 'prose m-auto text-left'.split(' '),
+})
